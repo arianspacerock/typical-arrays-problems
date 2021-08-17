@@ -1,29 +1,25 @@
 
 exports.min = function min (array) {
-  return 0;
+  if (!array || !array.length) {
+      return 0
+    } else return Math.min.apply(null, array)
 }
 
 exports.max = function max (array) {
-  return 0;
+    if (!array || !array.length) {
+      return 0
+    } else  return Math.max.apply(null, array)
 }
 
 exports.avg = function avg (array) {
-  return 0;
-}
-
-function maxMinAvg(arr) {
-    var max = arr[0];
-    var min = arr[0];
-    var sum = arr[0];
-    for (var i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
-        if (arr[i] < min) {
-            min = arr[i];
-        }
-        sum = sum + arr[i];
+  if (!array || !array.length) {
+    return 0
+  } else {
+    let summ = 0
+    for (let i = 0; i < array.length; i++) {
+      summ += array[i]
     }
-    var avg = sum / arr.length;
-    return [max, min, avg];
+      return summ / array.length
+}
+  
 }
